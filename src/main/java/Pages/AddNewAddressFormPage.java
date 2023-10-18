@@ -6,29 +6,29 @@ import org.openqa.selenium.support.FindBy;
 
 public class AddNewAddressFormPage extends BasePage {
 
-    @FindBy(id = "field-alias")
-    private WebElement addressAliasInputField;
+    @FindBy(css = "#field-alias")
+    private WebElement aliasInput;
 
-    @FindBy(id = "field-company")
-    private WebElement addressCompanyInputField;
+    @FindBy(css = "#field-company")
+    private WebElement companyName;
 
     @FindBy(id = "field-vat_number")
-    private WebElement addressVatInputField;
+    private WebElement addressVatInput;
 
     @FindBy(id = "field-address1")
-    private WebElement addressAddressInputField;
+    private WebElement addressAddressInput;
 
     @FindBy(id = "field-address2")
-    private WebElement addressAddressComplementInputField;
+    private WebElement addressAddressComplementInput;
 
     @FindBy(id = "field-city")
-    private WebElement addressCityInputField;
+    private WebElement cityInput;
 
     @FindBy(id = "field-postcode")
-    private WebElement addressZipCodeInputField;
+    private WebElement zipCode;
 
     @FindBy(id = "field-phone")
-    private WebElement addressPhoneInputField;
+    private WebElement phoneNumber;
 
     @FindBy(className = "btn.btn-primary.form-control-submit.float-xs-right")
     private WebElement saveNewAddressButton;
@@ -37,51 +37,51 @@ public class AddNewAddressFormPage extends BasePage {
         super(driver);
     }
 
-    public WebElement getAddressAliasInputField() {
-        return getVisibleElement(addressAliasInputField);
+    public WebElement getAliasInput() {
+        return getVisibleElement(aliasInput);
     }
 
-    public WebElement getAddressCompanyInputField() {
-        return getVisibleElement(addressCompanyInputField);
+    public WebElement getCompanyName() {
+        return getVisibleElement(companyName);
     }
 
-    public WebElement getAddressVatInputField() {
-        return getVisibleElement(addressVatInputField);
+    public WebElement getAddressVatInput() {
+        return getVisibleElement(addressVatInput);
     }
 
-    public WebElement getAddressAddressInputField() {
-        return getVisibleElement(addressAddressInputField);
+    public WebElement getAddressAddressInput() {
+        return getVisibleElement(addressAddressInput);
     }
 
-    public WebElement getAddressAddressComplementInputField() {
-        return getVisibleElement(addressAddressComplementInputField);
+    public WebElement getAddressAddressComplementInput() {
+        return getVisibleElement(addressAddressComplementInput);
     }
 
-    public WebElement getAddressCityInputField() {
-        return getVisibleElement(addressCityInputField);
+    public WebElement getCityInput() {
+        return getVisibleElement(cityInput);
     }
 
-    public WebElement getAddressZipCodeInputField() {
-        return getVisibleElement(addressZipCodeInputField);
+    public WebElement getZipCode() {
+        return getVisibleElement(zipCode);
     }
 
-    public WebElement getAddressPhoneInputField() {
-        return getVisibleElement(addressPhoneInputField);
+    public WebElement getPhoneNumber() {
+        return getVisibleElement(phoneNumber);
     }
 
     public WebElement getSaveNewAddressButton() {
         return getVisibleElement(saveNewAddressButton);
     }
 
-    public void fillAddressForm(String aliasName, String companyName, String vatNumber, String addressDetails, String addressComplement, String cityName, String zipCode, String phoneNumber) {
-        getAddressAliasInputField().sendKeys(aliasName);
-        getAddressCompanyInputField().sendKeys(companyName);
-        getAddressVatInputField().sendKeys(vatNumber);
-        getAddressAddressInputField().sendKeys(addressDetails);
-        getAddressAddressComplementInputField().sendKeys(addressComplement);
-        getAddressCityInputField().sendKeys(cityName);
-        getAddressZipCodeInputField().sendKeys(zipCode);
-        getAddressPhoneInputField().sendKeys(phoneNumber);
+    public void fillAddressForm(String aliasInput, String companyName, String addressVatInput, String addressAddressInput, String addressAddressComplementInput, String cityInput, String zipCode, String phoneNumber) {
+        getAliasInput().sendKeys(aliasInput);
+        getCompanyName().sendKeys(companyName);
+        getAddressVatInput().sendKeys(addressVatInput);
+        getAddressAddressInput().sendKeys(addressAddressInput);
+        getAddressAddressComplementInput().sendKeys(addressAddressComplementInput);
+        getCityInput().sendKeys(cityInput);
+        getZipCode().sendKeys(zipCode);
+        getPhoneNumber().sendKeys(phoneNumber);
     }
 
     public void submitNewAddressForm() {

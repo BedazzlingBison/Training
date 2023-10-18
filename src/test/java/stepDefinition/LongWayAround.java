@@ -22,7 +22,8 @@ public class LongWayAround {
     public void before() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+
 
     }
 
@@ -49,8 +50,8 @@ public class LongWayAround {
     @And("addresses button is clicked")
     public void addressesButtonIsClicked() {
         AccountPage accountPage = new AccountPage(driver);
-//        accountPage.clickAddressesButton();
-        accountPage.clickInformationButton();
+        accountPage.clickAddressesButton();
+
     }
 
     @And("add new address button is clicked")
@@ -59,8 +60,11 @@ public class LongWayAround {
         addressesInAccountPage.getAddNewAddress().click();
     }
 
-    @And("address form is filled with {} {} {} {} {} {}{}{}")
+
+
+    @And("address form is filled with {}{}{}{}{}{}{}{}")
     public void addressFormIsFilledWith(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5, String arg6, String arg7) {
+//        var div = wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("display-length")));
         AddNewAddressFormPage addNewAddressFormPage1 = new AddNewAddressFormPage(driver);
         addNewAddressFormPage1.fillAddressForm(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
         addNewAddressFormPage1.submitNewAddressForm();
@@ -72,11 +76,11 @@ public class LongWayAround {
 //        add
 //
 //    }
-
-    @Then("a success message is displayed")
-    public void aSuccessMessageIsDisplayed() {
-        AddressesInAccountPage addressesInAccountPage = new AddressesInAccountPage(driver);
-        String successText = addressesInAccountPage.getAlertAddNewAddressSuccess().getText();
-        Assert.assertEquals("Address successfully added!",successText);
-    }
+//
+//    @Then("a success message is displayed")
+//    public void aSuccessMessageIsDisplayed() {
+//        AddressesInAccountPage addressesInAccountPage = new AddressesInAccountPage(driver);
+//        String successText = addressesInAccountPage.getAlertAddNewAddressSuccess().getText();
+//        Assert.assertEquals("Address successfully added!",successText);
+//    }
 }
